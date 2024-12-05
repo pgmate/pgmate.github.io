@@ -1,2 +1,0 @@
-# pgmate.github.io
-Website
