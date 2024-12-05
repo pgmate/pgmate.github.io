@@ -10,35 +10,61 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Ships as Docker Container',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        PGMate runs in your browser. On your computer or in your Cloud. It connects to your db(s) and let you work with your data.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Explore Your DB',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        All the tools that you expect to <em>CRUD</em> your schemas and data, plus analytics tools, backups, migrations and SQL workbooks.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Talk With Your Data',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        PGMate uses GenAI to facilitate your job and copilot into building your data-project and fine tuning your queries.
       </>
     ),
   },
+  {
+    title: 'Postman for SQL',
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    description: (
+      <>
+        Create SQL workbooks that you can share with your co-workers. PGMate supports both Postmand and Jupyter Notebook's styles!
+      </>
+    ),
+  },
+  {
+    title: 'NPM For SQL',
+    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    description: (
+      <>
+        Quickly import public schemas and data, publish your data-projects and get support from the community.
+      </>
+    ),
+  },
+  {
+    title: 'Learn On The Job',
+    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    description: (
+      <>
+        Enjoy a selection of articles, news, and tutorials directly in your favourite Postgres IDE! <br />
+        Challenge yourself with PGMate Academy tasks.
+      </>
+    ),
+  },
+  
 ];
 
 function Feature({title, Svg, description}: FeatureItem) {

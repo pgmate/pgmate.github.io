@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpgmate=self.webpackChunkpgmate||[]).push([[121],{8070:e=>{e.exports=JSON.parse('{"tags":[{"label":"PGMate","permalink":"/blog/tags/pgmate","description":"PGMate Product News","count":1}]}')}}]);

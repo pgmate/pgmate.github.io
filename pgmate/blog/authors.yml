@@ -21,3 +21,17 @@ slorber:
     linkedin: sebastienlorber
     github: slorber
     newsletter: https://thisweekinreact.com
+
+marcopeg:
+  name: Marco Pegoraro
+  title: founder
+  url: https://marcopeg.com
+  image_url: https://marcopeg.com/content/images/2021/11/image-50.png
+  page:
+    # customize the url of the author page at /blog/authors/<permalink>
+    permalink: '/marcopeg'
+  socials:
+    x: thepeg
+    linkedin: marcopeg
+    github: marcopeg
+    newsletter: https://marcopeg.com

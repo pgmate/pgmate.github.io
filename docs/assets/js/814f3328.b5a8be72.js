@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpgmate=self.webpackChunkpgmate||[]).push([[472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome PGMate","permalink":"/blog/welcome-pgmate","unlisted":false,"date":"2021-08-26T00:00:00.000Z"}]}')}}]);
