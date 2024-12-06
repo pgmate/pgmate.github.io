@@ -4,14 +4,16 @@ import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: JSX.Element;
-};
+} & (
+  | { Svg: React.ComponentType<React.ComponentProps<'svg'>>; Img?: never }
+  | { Img: string; Svg?: never }
+);
 
 const FeatureList: FeatureItem[] = [
   {
     title: 'Ships as Docker Container',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Img: '/img/ships-as-docker.jpg',
     description: (
       <>
         PGMate runs in your browser. On your computer or in your Cloud. It connects to your db(s) and let you work with your data.
@@ -20,7 +22,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Explore Your DB',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Img: '/img/explore-your-data1.jpg',
     description: (
       <>
         All the tools that you expect to <em>CRUD</em> your schemas and data, plus analytics tools, backups, migrations and SQL workbooks.
@@ -29,7 +31,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Talk With Your Data',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Img: '/img/talk-with-your-data.jpg',
     description: (
       <>
         PGMate uses GenAI to facilitate your job and copilot into building your data-project and fine tuning your queries.
@@ -38,7 +40,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Postman for SQL',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Img: '/img/postman-for-sql.png',
     description: (
       <>
         Create SQL workbooks that you can share with your co-workers. PGMate supports both Postmand and Jupyter Notebook's styles!
@@ -47,7 +49,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'NPM For SQL',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Img: '/img/npm-for-sql.png',
     description: (
       <>
         Quickly import public schemas and data, publish your data-projects and get support from the community.
@@ -56,7 +58,8 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Learn On The Job',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    // Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Img: '/img/learning-on-the-job.jpg',
     description: (
       <>
         Enjoy a selection of articles, news, and tutorials directly in your favourite Postgres IDE! <br />
@@ -67,11 +70,13 @@ const FeatureList: FeatureItem[] = [
   
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, Svg, Img, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        {Img ? <img src={Img} alt="img" style={{height: 267}} /> : <Svg className={styles.featureSvg} role="img" />}
+        
+        
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>

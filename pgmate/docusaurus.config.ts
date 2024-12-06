@@ -8,7 +8,7 @@ const config: Config = {
   trailingSlash: false,
   title: 'PGMate',
   tagline: 'Postgres is Developers\' Best Friend',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon/pgmate.ico',
 
   // Set the production url of your site here
   url: 'https://pgmate.github.io',
@@ -72,7 +72,7 @@ const config: Config = {
       title: 'PGMate',
       logo: {
         alt: 'PGMate',
-        src: 'img/logo.svg',
+        src: 'img/pgmate-logo.png',
       },
       items: [
         {
