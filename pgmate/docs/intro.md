@@ -2,46 +2,112 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# PGMate in 5 minutes
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Let's discover **PGMate in less than 5 minutes**. You can easily run PGMate Demo Project in the Cloud for free, and quickly get to a result like:
+
+![PGMate Table View](https://github.com/pgmate/demo/raw/main/pgmate-data.png)
 
 ## Getting Started
 
-Get started by **creating a new site**.
+You can try PGMate in 4 different ways:
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+- In the Cloud
+  - run it on GitPod.io
+  - run it as GitHub Codespace
+- Locally
+  - quick bash command
+  - by cloning the Demo project
 
-### What you'll need
+## In the Cloud
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+### Run PGMate on GitPod.io
 
-## Generate a new site
+Click on this button and enjoy the automation:
 
-Generate a new Docusaurus site using the **classic template**.
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/pgmate/demo)
 
-The classic template will automatically be added to your project after you run the command:
+### Run PGMate on GitHub Codespace
+
+1. Open the [Demo Project on GitHub](https://github.com/pgmate/demo?tab=readme-ov-file#pgmate-demo)
+2. Click on: Code
+3. Click on: Create codespace on main
+4. Take a cup of coffee...
+
+![Run PGMate as GitHub Codespace](https://github.com/pgmate/demo/raw/main/pgmate-github-codespace.png)
+
+## In Your Development Machine
+
+### Quick Bash
+
+1. open your favourite Terminal App
+2. paste this command
 
 ```bash
-npm init docusaurus@latest my-website classic
+curl -sL https://bit.ly/3ZAx19E | bash -s -- run
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+:::info
+You need [Docker](https://docker.com) and a Linux environment (Mac also works fine)
+:::
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+### Clone the Demo Project
 
-## Start your site
+1. open your favourite Terminal App
+2. `git clone https://github.com/pgmate/demo pgmate`
+3. `cd pgmate`
+4. `docker compose up`
 
-Run the development server:
+:::info
+You need [Docker](https://docker.com) and a Linux environment (Mac also works fine)
+:::
+
+## Login
+
+The [Demo Project](https://github.com/pgmate/demo) ships with `pgmate` as default password:
+
+![PGMate Login](https://github.com/pgmate/demo/raw/main/pgmate-login.png)
+
+:::info
+You can change it to your favourite password by editing `PGMATE_ADMIN_SECRET` env variable.
+
+🧑‍💻 If you are running if from the _QuickBash_ command, try:
 
 ```bash
-cd my-website
-npm run start
+curl -sL https://bit.ly/3ZAx19E | bash -s \
+  -- run \
+  --secret=foobar
 ```
+:::
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+## Connections Manger (coming soon)
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+This feature is under development and you will soon be able to connect to multiple databases.
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+For now, PGMate requires a default connection string, and the [Demo Project](https://github.com/pgmate/demo) ships with a local Postgres container running alongside PGMate.
+
+Select the `default` connection and start exploring the default database.
+
+:::info
+You can change the default db by editing the `PGSTRING` env variable
+
+🧑‍💻 If you are running if from the _QuickBash_ command, try:
+
+```bash
+curl -sL https://bit.ly/3ZAx19E | bash -s \
+  -- run \
+  --pgstring=postgres://....
+```
+:::
+
+## Explore your Database
+
+[[ coming soon... ]]
+
+## Move across different Views
+
+[[ coming soon... ]]
+
+## Quick Connection Switch
+
+[[ coming soon... ]]
