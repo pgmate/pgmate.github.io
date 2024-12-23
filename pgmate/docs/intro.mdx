@@ -4,20 +4,25 @@ sidebar_position: 1
 
 # PGMate in 5 minutes
 
-Let's discover **PGMate in less than 5 minutes**. You can easily run PGMate Demo Project in the Cloud for free, and quickly get to a result like:
+Let's discover **PGMate in less than 5 minutes**. 
+
+You can easily [run PGMate Demo Project in the Cloud for free](https://gitpod.io/#https://github.com/pgmate/demo), and quickly get to a result like:
 
 ![PGMate Table View](https://github.com/pgmate/demo/raw/main/pgmate-data.png)
 
 ## Getting Started
 
-You can try PGMate in 4 different ways:
+PGMate offers multiple ways to get started, tailored to your preferences:
 
-- In the Cloud
-  - run it on GitPod.io
-  - run it as GitHub Codespace
-- Locally
-  - quick bash command
-  - by cloning the Demo project
+- [In the Cloud](#in-the-cloud)
+  - [Run it on GitPod.io](#run-pgmate-on-gitpodio)
+  - [Run it as a GitHub Codespace](#run-pgmate-on-github-codespace)
+- [On Your Local Machine](#in-your-development-machine)
+  - [Standalone Container](#standalone-container)
+  - [Quick Bash Command](#quick-bash)
+  - [Cloning the Demo Project](#clone-the-demo-project)
+
+Choose the option that works best for you and start exploring!
 
 ## In the Cloud
 
@@ -37,6 +42,19 @@ Click on this button and enjoy the automation:
 ![Run PGMate as GitHub Codespace](https://github.com/pgmate/demo/raw/main/pgmate-github-codespace.png)
 
 ## In Your Development Machine
+
+### Standalone Container
+
+This command will run the experimental standalone container that ships both PGMate and a Postgres 16 server within the same container:
+
+```bash
+docker run -p 8080:8080 pgmate/pgmate:latest-full
+```
+
+:::info
+This is the minimal config option and works well in any OS that supports Docker.  
+_Yes, also Windows._
+:::
 
 ### Quick Bash
 

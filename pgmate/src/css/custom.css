@@ -26,3 +26,8 @@
   --ifm-color-primary-lightest: #61aaf8;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.codeBlockContainer .copyButton {
+  display: block !important;
+  visibility: visible !important;
+}

@@ -138,7 +138,9 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    copyCode: true,
   } satisfies Preset.ThemeConfig,
+
 };
 
 export default config;
