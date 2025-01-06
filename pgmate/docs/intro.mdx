@@ -2,9 +2,12 @@
 sidebar_position: 1
 ---
 
-# PGMate in 5 minutes
+# 🐳 Docker QuickStart
 
-Let's discover **PGMate in less than 5 minutes**. 
+Let's discover **PGMate in less than 5 minutes**...  
+But if you really are in a rush, just [click here](https://gitpod.io/#https://github.com/pgmate/demo) and run it in GitPod.io:
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/pgmate/demo)
 
 You can easily [run PGMate Demo Project in the Cloud for free](https://gitpod.io/#https://github.com/pgmate/demo), and quickly get to a result like:
 
@@ -98,13 +101,17 @@ curl -sL https://bit.ly/3ZAx19E | bash -s \
 ```
 :::
 
-## Connections Manger (coming soon)
+## Connections Manger
 
-This feature is under development and you will soon be able to connect to multiple databases.
+PGMate lets you define multiple connections:
 
-For now, PGMate requires a default connection string, and the [Demo Project](https://github.com/pgmate/demo) ships with a local Postgres container running alongside PGMate.
+![List available connections](https://github.com/pgmate/demo/raw/main/connections-manager-list.png)
 
-Select the `default` connection and start exploring the default database.
+PGMate requires a default connection string provided as environmental variable `PGSTRING=postgres://postgres:xxx@postgres:5432/postgres`.
+
+The [Demo Project](https://github.com/pgmate/demo) ships with a local Postgres container running alongside PGMate.
+
+👉 The `default` connection is hidden in the _Connections Manager_ and can not be modified via UI.
 
 :::info
 You can change the default db by editing the `PGSTRING` env variable
@@ -116,6 +123,19 @@ curl -sL https://bit.ly/3ZAx19E | bash -s \
   -- run \
   --pgstring=postgres://....
 ```
+:::
+
+:::warning
+
+All the connections that you add are stored in the default db and **ARE ENCRYPTED WITH A DEFAULT KEY**.  
+💻 _This is ok for local instances, but it should always be seriously evaluated._
+
+🌩️ If you are running PGMate in a shared instance, we recommend you to implement the `PGMATE_ENCRYPTION_KEY` environmental variable with a custom encryption key that you can easily generate:
+
+```bash
+openssl rand -hex 32
+```
+
 :::
 
 ## Explore your Database

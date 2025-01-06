@@ -25,7 +25,7 @@ function HomepageHeader() {
             className="button button--secondary button--md"
             to="/docs/intro"
           >
-            PGMate Tutorial - 5min ⏱️
+            🐳 Docker QuickStart - 5min ⏱️
           </Link>
           <a
             href="https://gitpod.io/#https://github.com/pgmate/demo"
