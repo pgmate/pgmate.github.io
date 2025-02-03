@@ -1,0 +1,124 @@
+---
+slug: updates-week5
+title: Product Updates - Week 5
+authors: [marcopeg]
+tags: [pgmate, demo]
+---
+
+- Create new database and schema
+- Tables dependency tree
+- Edit in SQL studio shortcut
+- Support Instagres.com
+- UI niceties
+  - Resizeable menu
+  - Arc-inspired main menu
+  - Dense view on data-grids
+  - Fixed scroll & sticky page titles
+
+<!-- truncate -->
+
+## 🎉 New Features
+
+### Create new Database / Schema
+
+It's a little feature, but it could be useful to quickly create a new DB or Schema without having to hit on SQL code.
+
+I've taken care of adding an **optional description field** that materializes as a `COMMENT ON` db/schema.
+
+👉 [Adding comments to your database object will make Copilot much more efficient](https://marcopeg.com/context-fuels-language-models/).
+
+![Create new database and schema](/img/updates/w5/create-db-schema.gif)
+
+### Table's Upstream/Downstram Chart
+
+This is the first step into visualizing the database relations. So far, PGMate uses _foreign keys_ metadata, as long with other information from `pg_depend` about indexes and series.
+
+It is already possible to click on the nodes to navigate the database, and in the future I plan do add _AI-based analysis_ to suggest semantic relations that are not described as part of the schema.
+
+![Table's Upstream/downswtram charts - PGMate](/img/updates/w5/upstream-downstream.png)
+
+### Edit in SQL Studio
+
+One of the goals of PGMate is to expose the generated SQL everywhere in the user interface (🚧) so that the user can learn something from it. If anything, it vastly uses the Postgres' metadata schemas to do its job.
+
+But there are many situations in which it would be nice to take the generated code and tweak it to get the results you want. Well, now you can.
+
+![Edit in SQL Studio - PGMate](/img/updates/w5/edit-in-sql-studio.gif)
+
+### Support Instagres Databases
+
+I've recently came across [Instagres](https://www.instagres.com/), a service from [Neon](https://neon.tech) that lets you spin up a **temporary Postgres db** in seconds.
+
+I tried it, only to figure our that PGMate's SSL options weren't enough... So now it's fixed and you can pass any of the querystring supported options.
+
+👉 Try to [CREATE an Instagres](https://www.instagres.com/new) db and navigate it with PGMate!
+
+![Support Instagres](/img/updates/w5/instagres.gif)
+
+## 👩‍💻 UX Improvements
+
+### Resizeable Side menu
+
+Ok, not really a game changer, but I was bothered by other Apps that could do this.
+
+And yes, thanks for asking, I'm considering a collapsible menu but I'm not yet sure about its UX yet.
+
+![Resizeable Side Menu - PGMate](/img/updates/w5/resize-menu.gif)
+
+### Arc Inspired Menu
+
+I love the [Arc browser](https://arc.net/), especially how they designed the pinned links in the sidebar.
+
+This is the first step into a similar feature. It's only UI for some static links right now, but in the future the idea is to host drag'n'droppable bookmarks to tables, functions, snippets and whatsoever.
+
+![Arc Inspired Menu - PGMate](/img/updates/w5/arc-inspired-menu.png)
+
+### Dense Grid Layout
+
+A colleague made a little remark about content density in the results grid... and this turned out to be just a low-hanging fruit (`density=compact` in MUI's x-grid).
+
+![Dense Grid Layout - PGMate](/img/updates/w5/dense-grid-layout.png)
+
+## 🚧 COMING UP NEXT
+
+### Keyboard Shortcuts
+
+I plan to work on **keyboard shortcuts** to navigate the database.
+
+Focusing on high-level features:
+
+- Home
+- Copilot
+- SQL Studio
+
+Jumping to different layers:
+
+- connection
+- database
+- schema
+
+Moving across table's view:
+
+- data
+- info
+- structure
+- DDL
+
+In the end, I envision to bring into PGMate something similar to VSCode's Command Palette, which I consider one of the best approach to a hybrid or aided keyboard shortcuts management.
+
+### Home Screen Articles
+
+As you know, one of the goals of PGMate is to blend a Postgres client with a learning tool or learning experience.
+
+The first micro-step was the **Postgres Facts** feature:
+
+![Postgres Facts - PGMate](/img/updates/w5/postgres-facts.gif)
+
+The next step is to curate a blog of open source contents from external sources and inject it into PGMate's home screen. This feature is much inspired by [GhostJS](https://ghost.org/) admin panel, and it will be a blend of:
+
+- product updates (well, this kind of posts)
+- Youtube videos
+- Interesting Reddit conversations
+- General articles
+
+The idea is to use [PGMate's content repo](https://github.com/pgmate/contents/tree/main) to store index files that will be edited and enriched by the community with public PRs. A background function will pull new content into some internal tables that are then used to serve it in an internal category based wall of content.

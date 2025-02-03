@@ -1,0 +1,88 @@
+# ⌨️ SQL Studio
+
+SQL Studio is the main code editor of PGMate.
+
+You can run any query against the [selected connection](./connections-manager#switching-connections) and use any SQL feature that is allowed by your permission.
+
+![SQL Studio - PGMate](/img/docs/sql-studio/sql-studio.gif)
+
+## Keyboard Shortcuts
+
+PGMate aims for a seamless keyboard navigation experience.
+
+Our editor is based on [Monaco Editor](https://microsoft.github.io/monaco-editor/) which is VSCode's choice; so chances are that you've already used it sometimes, and that you are already familiar with the basics of keyboard navigation:
+
+| shortcut              | description                           |
+| --------------------- | ------------------------------------- |
+| Cmd + Enter           | execute current selection (\*)        |
+| Cmd + d               | select next occurrence (multi cursor) |
+| Opt + Up/Dowm         | move selection up/down                |
+| shift + Opt + Up/Down | duplicate selection up/down           |
+
+## Run Selection (\*)
+
+- When you use the "Run Selection" button from the UI only the code that is selected is committed for execution.
+- When you use `Cmd + Enter` and there is an active selection, that selection is commited as well.
+- If you `Cmd + Enter` without a selection, PGMate will **try to automatically identify** the portion of code that contains the SQL command around your cursor.
+
+👉 This last behavior is an **experimental feature** and it is prone to errors with complex queries (CTEs), code blocks (DO/LOOP) and functions. Improving this is in our backlog and we are happy bunnies 🐰 if **you decide to help us!**
+
+## Auto Completion
+
+SQL Studio supports the basics of the SQL language for auto completion purpose.
+
+PGMate's goal is to extend this support to be context-aware in real time. That means that you will soon enjoy auto completion for your schemas, tables, functions and more. Constantly updated as you modify your schema.
+
+## Code Snippets
+
+**🚧 COMING SOON**
+
+This feature will support saving SQL code for further execution.
+
+It is still not completely clear how this will be done. Here are some ideas.
+
+### Save to File
+
+As PGMate runs as a container, it can easily interact with its own _file system_ and that can easily be mapped to the host's. The active context can be persisted to a default file and that file could be switched around to source the editor's code.
+
+That could even span into a multi-tab UI where multiple contexts could be kept open and synced at once, and the editor would remember the active tab whenever switching back to the SQL Studio, or whenever using the "Send to SQL Studio" feature.
+
+In this scenario, the sidebar content would be replaced with a File System navigation tree, allowing the user to freely interact with folders and files.
+
+> 🤓 There is even some sci-fi ideas about implementing a proprietary Import/Export mechanism and give to normal SQL files some of the Javascript's modules capabilities.
+
+### Import/Export Snippets
+
+The idea is to take a code selection and persist it as a **named snippet**.
+
+A snippet would be a configurable object composed by:
+
+- code
+- variables (optional)
+
+Once a snipped is saved, it could then be used in a couple of interesting ways:
+
+- Re-imported into the editor by `search->Enter`
+- Associated with a custom keyboard shortcut for seamless execution, with a UI for setting variables if needed
+  <small>
+    (imagine a snippet that resets stats or series on a particular table that is
+    given as parameter)
+  </small>
+- Associated with a visual shortcut in the sidebar
+  <small>(click to run)</small>
+- Associated with a Dasboard Widget to automatically display data
+  <small>(how many new users today?)</small>
+
+👉 Snippets would be saved as json configuration files in a _file system_ area that could be mapped out as a volume, allowing the configuration of your PGMate to be a source of truth that can be **managed by a version control system**.
+
+## Import Code
+
+PGMate is full of code snippets that shows what the hell is happening behind the hood of the User Interface.
+
+> The goal is to constantly expand your knowledge by looking at SQL code. If anything, you will see a lot of queries around Postgres' metadata 😎.
+
+Use the `Send to SQL Studio` button from any of those snippets, as well as from Copilot's code blocks:
+
+![Import SQL Code - PGMate](/img/docs/sql-studio/import-sql-code.gif)
+
+The snippet will be appended to the current SQL Studio open context.

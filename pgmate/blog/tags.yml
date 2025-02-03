@@ -2,4 +2,7 @@ pgmate:
   label: PGMate
   permalink: /pgmate
   description: PGMate Product News
-
+demo:
+  label: Demo
+  permalink: /demo
+  description: Demos of the product

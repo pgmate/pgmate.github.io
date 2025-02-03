@@ -1,0 +1,92 @@
+# ⌨️ Keyboard Shortcuts
+
+I love keyboard shortcuts and I love the way VSCode provides a hybrid experience through the `Command Palette`.
+
+So basically that is the User Experience that PGMate aims for, but there is nothing released yet.
+
+This page is about what I DREAM TO RELEASE.
+
+## Command Palette
+
+`Shift + Cmd + p` (same as VSCode) will bring up the Command Palette where you will be able to filter out registered command until you find what you want and simply hit Enter.
+
+[Running commands is describle below](#running-commands).
+
+## Snippets Palette
+
+`Cmd + p` (same as VSCode) will let you open a SQL file in the SQL Studio or a Configurable Code Snippet.
+
+In both cases I envision a `Enter` on the selected line to trigger the main action (open the SQL file or the snippet), and a `Shift + Enter` to trigger the secondary action (open & execute the SQL file, or execute the Snippet).
+
+## Global Shortcuts
+
+Same as in VSCode, there will be globally available shortcuts.
+That's what I have in mind:
+
+| combo                  | description             |
+| ---------------------- | ----------------------- |
+| Cmd + ?                | open Copilot            |
+| Cmd + ?                | open Steward (\*)       |
+| Cmd + ?                | open SQL Studio         |
+| Opt + Cmd + Left/Right | move left right in tabs |
+
+(\*) Steward is an inline (popup/sidebar) non-persisted Copilot session that can fetch context from the UI underneath. I still have no clue how to do this, but it would be a nice to have.
+
+## Contextual Shortcuts
+
+Contextual shortcuts are active only when a certain condition is true. This could be data from a context (need to implement a global one?) or path matching.
+
+It could also be signal-based like keeping a feature-flag map that is fueled by events. When a particular component mounts/unmounts it could activate/deactivate shortcuts.
+
+### Connection Shortcuts
+
+These make sense only if a connection is active or even in more specific scenario.
+
+| combo               | description                                           |
+| ------------------- | ----------------------------------------------------- |
+| Cmd + ?             | Go to Home Page                                       |
+| Cmd + ?             | Go to Connection Page                                 |
+| Cmd + ?             | Go to Database Page                                   |
+| Cmd + ?             | Go to Schema Page                                     |
+| Opt + Cmd + Up/Down | move next/prev table in the schema when in table mode |
+
+Examples of complex cases:
+
+- moving to the "schema page" can be achieved from a table's view but not from the Connection
+- moving up/down **from a table view** should move to prev/next table
+- moving up/down **from a schema view** should move to prev/next schema
+
+### Table Mode
+
+These are only active if a table is focused in the sidebar.
+
+| combo   | description           |
+| ------- | --------------------- |
+| Cmd + ? | table: data view      |
+| Cmd + ? | table: info view      |
+| Cmd + ? | table: structure view |
+| Cmd + ? | tabls: DLL view       |
+
+### SQL Studio
+
+| combo               | description                   |
+| ------------------- | ----------------------------- |
+| Cmd + Enter         | run selection / cursor target |
+| Shift + Cmd + Enter | run all code                  |
+
+### Copilot
+
+| combo         | description      |
+| ------------- | ---------------- |
+| Enter         | Send the message |
+| Shift + Enter | new line in chat |
+
+## Running Commands
+
+Commands in PGMate need to be configuration-driven. I haven't yet spent time researching a read-to-use approach (although I hope to be able to use something from the VSCode ecosystem), but it's failrily easy to assume that they need to be declarative configuration associated with implementors so that it is possible to handle these scenarios:
+
+- plugins / extension must be able to register new commands
+- user configuration can override shortcuts, command names and search paths to the user's liking
+- command input UI is standardized
+
+I really really wish I'm not going to build this myself because it is not core to PGMate, although keyboard navigation is still a paramount user interface to me.

@@ -1,0 +1,61 @@
+---
+slug: copilot-poc
+title: PGMate Copilot POC
+authors: [marcopeg]
+tags: [pgmate, demo]
+---
+
+Copilot brings real-time context-aware AI to PGMate.  
+It enables the **chat with your data** scenario with in-line code-blocks execution.
+
+<YouTube videoId="hAvWcbox7BE" title="PGMate Copilot Demo" />
+
+<!-- truncate -->
+
+There is a lot of fuzz around the **CHAT WITH YOUR DATA** eldorado.
+
+After reading an article about [QueryGPT at Uber](https://www.uber.com/en-TW/blog/query-gpt/)
+I found myself thinking: _"How hard could that be?"_ 🤓  
+So I've decided to give it a go.
+
+This demo showcases what is already available to all users that [pull the PGMate image from DockerHub](https://hub.docker.com/repository/docker/pgmate/pgmate).
+
+## Setup:
+
+You simply have to provide an [OpenAI Api Key](https://community.openai.com/t/how-to-generate-openai-api-key/401363) as environment variable and you are good to go:
+
+```bash
+docker run \
+    -p 8080:8080 \
+    -e PGMATE_OPENAPI_KEY=xxx \
+    pgmate/pgmate:latest-full
+```
+
+## Postgres LLM Context
+
+For this first POC, Copilot uses a **one shot prompt** approach to try solving the user's request.
+
+What makes it working so well is the real-time context that is injected into the conversation.
+
+I'm having a lot of brainstorms about how to **optimize this context for accuracy and economical convenience**.
+
+🤓 Because that's the real challange.
+
+Any fool can copy/paste the full context into ChatGPT and let it crunch by a powerful model.
+But this could end up being very costly, and also may lead to inaccuracies.
+Imagine overflowing the model with tens of tables metadata when the business request is only affecting 2 of those.
+
+👉 Too much information is both useless and harmful.
+
+## Plans for the Future
+
+**For the engine**, the goal is to move to a multi-step agenting oriented approach:
+
+1. A first agent receives a comprehensive but shallow context and is tasked to figure out which objects are needed to solve the request
+2. A second agent receives a deep context on the resources previously identified and it is tasked with solving the reuquest
+
+I plan also to introduce a goal-detection agent that would be used to navigate a prompt-tree and specialize prompts based on intentions.
+
+Last but not least, I plan to work on the conversation history introducing an agent that will digest a "compact memory" of cold messages with the goal of balancing memory and token consumptions.
+
+**On the User Experience side**, the idea is to move the chat to be stored in the support db (now it's local storage) and enable a classic multi-conversation experience.
