@@ -4,15 +4,142 @@
         <title>PGMate Blog</title>
         <link>https://pgmate.github.io/blog</link>
         <description>PGMate Blog</description>
-        <lastBuildDate>Thu, 26 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 01 Feb 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
+            <title><![CDATA[Product Updates - Week 5]]></title>
+            <link>https://pgmate.github.io/blog/updates-week5</link>
+            <guid>https://pgmate.github.io/blog/updates-week5</guid>
+            <pubDate>Sat, 01 Feb 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[- Create new database and schema]]></description>
+            <content:encoded><![CDATA[<ul>
+<li>Create new database and schema</li>
+<li>Tables dependency tree</li>
+<li>Edit in SQL studio shortcut</li>
+<li>Support Instagres.com</li>
+<li>UI niceties<!-- -->
+<ul>
+<li>Resizeable menu</li>
+<li>Arc-inspired main menu</li>
+<li>Dense view on data-grids</li>
+<li>Fixed scroll &amp; sticky page titles</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-new-features">🎉 New Features<a href="https://pgmate.github.io/blog/updates-week5#-new-features" class="hash-link" aria-label="Direct link to 🎉 New Features" title="Direct link to 🎉 New Features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="create-new-database--schema">Create new Database / Schema<a href="https://pgmate.github.io/blog/updates-week5#create-new-database--schema" class="hash-link" aria-label="Direct link to Create new Database / Schema" title="Direct link to Create new Database / Schema">​</a></h3>
+<p>It's a little feature, but it could be useful to quickly create a new DB or Schema without having to hit on SQL code.</p>
+<p>I've taken care of adding an <strong>optional description field</strong> that materializes as a <code>COMMENT ON</code> db/schema.</p>
+<p>👉 <a href="https://marcopeg.com/context-fuels-language-models/" target="_blank" rel="noopener noreferrer">Adding comments to your database object will make Copilot much more efficient</a>.</p>
+<p><img decoding="async" loading="lazy" alt="Create new database and schema" src="https://pgmate.github.io/assets/images/create-db-schema-d73ce7e50a37e2e9bcc1d395e4b40ec6.gif" width="1280" height="720" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="tables-upstreamdownstram-chart">Table's Upstream/Downstram Chart<a href="https://pgmate.github.io/blog/updates-week5#tables-upstreamdownstram-chart" class="hash-link" aria-label="Direct link to Table's Upstream/Downstram Chart" title="Direct link to Table's Upstream/Downstram Chart">​</a></h3>
+<p>This is the first step into visualizing the database relations. So far, PGMate uses <em>foreign keys</em> metadata, as long with other information from <code>pg_depend</code> about indexes and series.</p>
+<p>It is already possible to click on the nodes to navigate the database, and in the future I plan do add <em>AI-based analysis</em> to suggest semantic relations that are not described as part of the schema.</p>
+<p><img decoding="async" loading="lazy" alt="Table&amp;#39;s Upstream/downswtram charts - PGMate" src="https://pgmate.github.io/assets/images/upstream-downstream-9f1acc2c182d1f57f8fb61b7251557a1.png" width="1842" height="1058" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="edit-in-sql-studio">Edit in SQL Studio<a href="https://pgmate.github.io/blog/updates-week5#edit-in-sql-studio" class="hash-link" aria-label="Direct link to Edit in SQL Studio" title="Direct link to Edit in SQL Studio">​</a></h3>
+<p>One of the goals of PGMate is to expose the generated SQL everywhere in the user interface (🚧) so that the user can learn something from it. If anything, it vastly uses the Postgres' metadata schemas to do its job.</p>
+<p>But there are many situations in which it would be nice to take the generated code and tweak it to get the results you want. Well, now you can.</p>
+<p><img decoding="async" loading="lazy" alt="Edit in SQL Studio - PGMate" src="https://pgmate.github.io/assets/images/edit-in-sql-studio-383e41f040d257a379b490a84ece350d.gif" width="1280" height="720" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="support-instagres-databases">Support Instagres Databases<a href="https://pgmate.github.io/blog/updates-week5#support-instagres-databases" class="hash-link" aria-label="Direct link to Support Instagres Databases" title="Direct link to Support Instagres Databases">​</a></h3>
+<p>I've recently came across <a href="https://www.instagres.com/" target="_blank" rel="noopener noreferrer">Instagres</a>, a service from <a href="https://neon.tech/" target="_blank" rel="noopener noreferrer">Neon</a> that lets you spin up a <strong>temporary Postgres db</strong> in seconds.</p>
+<p>I tried it, only to figure our that PGMate's SSL options weren't enough... So now it's fixed and you can pass any of the querystring supported options.</p>
+<p>👉 Try to <a href="https://www.instagres.com/new" target="_blank" rel="noopener noreferrer">CREATE an Instagres</a> db and navigate it with PGMate!</p>
+<p><img decoding="async" loading="lazy" alt="Support Instagres" src="https://pgmate.github.io/assets/images/instagres-2d59df9782c2c05537929f9c01713383.gif" width="1280" height="720" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-ux-improvements">👩‍💻 UX Improvements<a href="https://pgmate.github.io/blog/updates-week5#-ux-improvements" class="hash-link" aria-label="Direct link to 👩‍💻 UX Improvements" title="Direct link to 👩‍💻 UX Improvements">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="resizeable-side-menu">Resizeable Side menu<a href="https://pgmate.github.io/blog/updates-week5#resizeable-side-menu" class="hash-link" aria-label="Direct link to Resizeable Side menu" title="Direct link to Resizeable Side menu">​</a></h3>
+<p>Ok, not really a game changer, but I was bothered by other Apps that could do this.</p>
+<p>And yes, thanks for asking, I'm considering a collapsible menu but I'm not yet sure about its UX yet.</p>
+<p><img decoding="async" loading="lazy" alt="Resizeable Side Menu - PGMate" src="https://pgmate.github.io/assets/images/resize-menu-fe71e1ef7cc99bbb6511517ef11be9e3.gif" width="640" height="480" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="arc-inspired-menu">Arc Inspired Menu<a href="https://pgmate.github.io/blog/updates-week5#arc-inspired-menu" class="hash-link" aria-label="Direct link to Arc Inspired Menu" title="Direct link to Arc Inspired Menu">​</a></h3>
+<p>I love the <a href="https://arc.net/" target="_blank" rel="noopener noreferrer">Arc browser</a>, especially how they designed the pinned links in the sidebar.</p>
+<p>This is the first step into a similar feature. It's only UI for some static links right now, but in the future the idea is to host drag'n'droppable bookmarks to tables, functions, snippets and whatsoever.</p>
+<p><img decoding="async" loading="lazy" alt="Arc Inspired Menu - PGMate" src="https://pgmate.github.io/assets/images/arc-inspired-menu-333871dde8908e1e4e7f200e55dd8783.png" width="772" height="492" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="dense-grid-layout">Dense Grid Layout<a href="https://pgmate.github.io/blog/updates-week5#dense-grid-layout" class="hash-link" aria-label="Direct link to Dense Grid Layout" title="Direct link to Dense Grid Layout">​</a></h3>
+<p>A colleague made a little remark about content density in the results grid... and this turned out to be just a low-hanging fruit (<code>density=compact</code> in MUI's x-grid).</p>
+<p><img decoding="async" loading="lazy" alt="Dense Grid Layout - PGMate" src="https://pgmate.github.io/assets/images/dense-grid-layout-11188ad1676973dd6247958ab1ea769d.png" width="1898" height="1143" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-coming-up-next">🚧 COMING UP NEXT<a href="https://pgmate.github.io/blog/updates-week5#-coming-up-next" class="hash-link" aria-label="Direct link to 🚧 COMING UP NEXT" title="Direct link to 🚧 COMING UP NEXT">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="keyboard-shortcuts">Keyboard Shortcuts<a href="https://pgmate.github.io/blog/updates-week5#keyboard-shortcuts" class="hash-link" aria-label="Direct link to Keyboard Shortcuts" title="Direct link to Keyboard Shortcuts">​</a></h3>
+<p>I plan to work on <strong>keyboard shortcuts</strong> to navigate the database.</p>
+<p>Focusing on high-level features:</p>
+<ul>
+<li>Home</li>
+<li>Copilot</li>
+<li>SQL Studio</li>
+</ul>
+<p>Jumping to different layers:</p>
+<ul>
+<li>connection</li>
+<li>database</li>
+<li>schema</li>
+</ul>
+<p>Moving across table's view:</p>
+<ul>
+<li>data</li>
+<li>info</li>
+<li>structure</li>
+<li>DDL</li>
+</ul>
+<p>In the end, I envision to bring into PGMate something similar to VSCode's Command Palette, which I consider one of the best approach to a hybrid or aided keyboard shortcuts management.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="home-screen-articles">Home Screen Articles<a href="https://pgmate.github.io/blog/updates-week5#home-screen-articles" class="hash-link" aria-label="Direct link to Home Screen Articles" title="Direct link to Home Screen Articles">​</a></h3>
+<p>As you know, one of the goals of PGMate is to blend a Postgres client with a learning tool or learning experience.</p>
+<p>The first micro-step was the <strong>Postgres Facts</strong> feature:</p>
+<p><img decoding="async" loading="lazy" alt="Postgres Facts - PGMate" src="https://pgmate.github.io/assets/images/postgres-facts-f9da4baa8ff39bf234e414a944b4eddb.gif" width="1280" height="720" class="img_ev3q"></p>
+<p>The next step is to curate a blog of open source contents from external sources and inject it into PGMate's home screen. This feature is much inspired by <a href="https://ghost.org/" target="_blank" rel="noopener noreferrer">GhostJS</a> admin panel, and it will be a blend of:</p>
+<ul>
+<li>product updates (well, this kind of posts)</li>
+<li>Youtube videos</li>
+<li>Interesting Reddit conversations</li>
+<li>General articles</li>
+</ul>
+<p>The idea is to use <a href="https://github.com/pgmate/contents/tree/main" target="_blank" rel="noopener noreferrer">PGMate's content repo</a> to store index files that will be edited and enriched by the community with public PRs. A background function will pull new content into some internal tables that are then used to serve it in an internal category based wall of content.</p>]]></content:encoded>
+            <category>PGMate</category>
+            <category>Demo</category>
+        </item>
+        <item>
+            <title><![CDATA[PGMate Copilot POC]]></title>
+            <link>https://pgmate.github.io/blog/copilot-poc</link>
+            <guid>https://pgmate.github.io/blog/copilot-poc</guid>
+            <pubDate>Sun, 26 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Copilot brings real-time context-aware AI to PGMate.]]></description>
+            <content:encoded><![CDATA[<p>Copilot brings real-time context-aware AI to PGMate.<br>
+<!-- -->It enables the <strong>chat with your data</strong> scenario with in-line code-blocks execution.</p>
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:1rem"><iframe src="https://www.youtube.com/embed/hAvWcbox7BE" title="PGMate Copilot Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div>
+<p>There is a lot of fuzz around the <strong>CHAT WITH YOUR DATA</strong> eldorado.</p>
+<p>After reading an article about <a href="https://www.uber.com/en-TW/blog/query-gpt/" target="_blank" rel="noopener noreferrer">QueryGPT at Uber</a>
+I found myself thinking: <em>"How hard could that be?"</em> 🤓<br>
+<!-- -->So I've decided to give it a go.</p>
+<p>This demo showcases what is already available to all users that <a href="https://hub.docker.com/repository/docker/pgmate/pgmate" target="_blank" rel="noopener noreferrer">pull the PGMate image from DockerHub</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="setup">Setup:<a href="https://pgmate.github.io/blog/copilot-poc#setup" class="hash-link" aria-label="Direct link to Setup:" title="Direct link to Setup:">​</a></h2>
+<p>You simply have to provide an <a href="https://community.openai.com/t/how-to-generate-openai-api-key/401363" target="_blank" rel="noopener noreferrer">OpenAI Api Key</a> as environment variable and you are good to go:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">docker run \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    -p 8080:8080 \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    -e PGMATE_OPENAPI_KEY=xxx \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    pgmate/pgmate:latest-full</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="postgres-llm-context">Postgres LLM Context<a href="https://pgmate.github.io/blog/copilot-poc#postgres-llm-context" class="hash-link" aria-label="Direct link to Postgres LLM Context" title="Direct link to Postgres LLM Context">​</a></h2>
+<p>For this first POC, Copilot uses a <strong>one shot prompt</strong> approach to try solving the user's request.</p>
+<p>What makes it working so well is the real-time context that is injected into the conversation.</p>
+<p>I'm having a lot of brainstorms about how to <strong>optimize this context for accuracy and economical convenience</strong>.</p>
+<p>🤓 Because that's the real challange.</p>
+<p>Any fool can copy/paste the full context into ChatGPT and let it crunch by a powerful model.
+But this could end up being very costly, and also may lead to inaccuracies.
+Imagine overflowing the model with tens of tables metadata when the business request is only affecting 2 of those.</p>
+<p>👉 Too much information is both useless and harmful.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="plans-for-the-future">Plans for the Future<a href="https://pgmate.github.io/blog/copilot-poc#plans-for-the-future" class="hash-link" aria-label="Direct link to Plans for the Future" title="Direct link to Plans for the Future">​</a></h2>
+<p><strong>For the engine</strong>, the goal is to move to a multi-step agenting oriented approach:</p>
+<ol>
+<li>A first agent receives a comprehensive but shallow context and is tasked to figure out which objects are needed to solve the request</li>
+<li>A second agent receives a deep context on the resources previously identified and it is tasked with solving the reuquest</li>
+</ol>
+<p>I plan also to introduce a goal-detection agent that would be used to navigate a prompt-tree and specialize prompts based on intentions.</p>
+<p>Last but not least, I plan to work on the conversation history introducing an agent that will digest a "compact memory" of cold messages with the goal of balancing memory and token consumptions.</p>
+<p><strong>On the User Experience side</strong>, the idea is to move the chat to be stored in the support db (now it's local storage) and enable a classic multi-conversation experience.</p>]]></content:encoded>
+            <category>PGMate</category>
+            <category>Demo</category>
+        </item>
+        <item>
             <title><![CDATA[Welcome PGMate]]></title>
             <link>https://pgmate.github.io/blog/welcome-pgmate</link>
             <guid>https://pgmate.github.io/blog/welcome-pgmate</guid>
-            <pubDate>Thu, 26 Aug 2021 00:00:00 GMT</pubDate>
+            <pubDate>Sun, 01 Dec 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Postgres is the greatest tool of the modern development era.]]></description>
             <content:encoded><![CDATA[<p>Postgres is the greatest tool of the modern development era.<br>
 <!-- -->PGMate has the mission to provide with a <strong>multi-purpose client</strong> that let you:</p>
