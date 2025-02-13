@@ -1,0 +1,90 @@
+---
+slug: updates-week7
+title: Introducing Community Articles
+authors: [marcopeg]
+tags: [pgmate]
+---
+
+Now PGMate displays articles from our Community. 👨‍👩‍👧‍👦
+
+Although this is not a strictly functional improvement, it's something I deeply care about.
+
+👉 It's the second step towards **integrating a sleek Postgres Client with a Learning Center**.
+
+<!-- truncate -->
+
+![Introducing articles](/img/updates/w7/articles.gif)
+
+The goal with **Community Articles** is to create a mix of features inspired by:
+
+- Classic database client
+- RSS feed reader
+
+😇 Can't hide that the inspiration came from [GhostJS](https://ghost.org/) admin panel that offers exactly this.
+
+## Best of Breed
+
+I know, I know; they say: _"do one thing, do it right"_, but this is still a personal side-project so I feel really free to experiment with features I believe could be beneficial to us Engineers.
+
+Way too often, we focus on solving the next task on the backlog and neglet our own growth. This is true for both technical and personal growth.
+
+By embedding [Community-driven Articles](https://github.com/pgmate/contents/tree/main/contents/articles) into a development tool (that I hope you use daily) chances are that some articles will catch your attention and you will read through. 🤞
+
+## The Journey Ahead
+
+My brain is exploding with ideas how to take the educational side of PGMate to the next level:
+
+### Bookmarks
+
+Same as for the quick-facts, it will be possible to 👍👎 an article, influencing its display status and building a short-list of content that is particularly relevant for you.
+
+### Comments
+
+PGMate aims to be a social platform focused on databases and Postgres.
+
+One possibile development is to introduce an account system and link it to your running client (yeah, just another token) and enable classic community features such as comments and similar.
+
+Another direction would be to enable multi-account within an installation and run this comments feature among the users that can access one PGMate instace. Highly inspired by the concept of a Discord server.
+
+### Annotations
+
+I plan to steal this feature from Kindle. I just love to highlight and annotate contents there, and collect my ideas and reflections in an automatic scrapebook.
+
+Wouldn't it be nice?
+
+Your local PGMate instance will then become a mix of client, editor, and notebook.
+
+### Personal Articles
+
+The community articles are basically just a bookmark file on GitHub that is automatically imported when your client boots.
+
+Well, why not add a "+" icon and let the user add custom bookmarks as well?
+
+Of course, we would prefer if you decide share your bookmarks with the community and [open a new PR towards our Contents Repository](https://github.com/pgmate/contents).
+
+### Community-driven Courses
+
+The Internet is full of good training material. For free.
+
+Articles, videos, podcasts. The content is out there but needs research and organization.
+
+The idea is to build catalogs of structured contents that fulfill a learning purpose.
+
+This will be similar to how the Articles work, but the _"bookmark file"_ would be organized by goals and milestones.
+
+Here are some examples of a possible structure:
+
+- Goal: Postgres Intro
+  - Milestone 1: Run Postgres using Docker
+  - Milestone 2: Basic CRUD
+  - ...
+- Goal: Indexing
+  - Milestone 1: Theory on Indexes
+  - Milestone 2: Explain / Analyze
+  - ...
+
+Each milestone will be a list of **bookmarks to free online materials** (I guess mostly YouTube videos) that are sorted out from easy to difficult and are meant to be consumed in order.
+
+Of course, all of this will be JSON files in out [Contents Repository](https://github.com/pgmate/contents) that you and everyone else can edit and PR to. The idea is to build this organized content togegher, right?
+
+PGMate will import the sources into the local state at boot time and provide a nice UI where you can look around the courses catalog, track progress and maybe enjoy the same features that we are imagining for the Articles (bookmarks, annotations, comments)
