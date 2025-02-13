@@ -4,10 +4,73 @@
         <title>PGMate Blog</title>
         <link>https://pgmate.github.io/blog</link>
         <description>PGMate Blog</description>
-        <lastBuildDate>Sat, 01 Feb 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 11 Feb 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Introducing Community Articles]]></title>
+            <link>https://pgmate.github.io/blog/updates-week7</link>
+            <guid>https://pgmate.github.io/blog/updates-week7</guid>
+            <pubDate>Tue, 11 Feb 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Now PGMate displays articles from our Community. 👨‍👩‍👧‍👦]]></description>
+            <content:encoded><![CDATA[<p>Now PGMate displays articles from our Community. 👨‍👩‍👧‍👦</p>
+<p>Although this is not a strictly functional improvement, it's something I deeply care about.</p>
+<p>👉 It's the second step towards <strong>integrating a sleek Postgres Client with a Learning Center</strong>.</p>
+<p><img decoding="async" loading="lazy" alt="Introducing articles" src="https://pgmate.github.io/assets/images/articles-f94d36a31489a53296fac088d021aa4c.gif" width="1280" height="720" class="img_ev3q"></p>
+<p>The goal with <strong>Community Articles</strong> is to create a mix of features inspired by:</p>
+<ul>
+<li>Classic database client</li>
+<li>RSS feed reader</li>
+</ul>
+<p>😇 Can't hide that the inspiration came from <a href="https://ghost.org/" target="_blank" rel="noopener noreferrer">GhostJS</a> admin panel that offers exactly this.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="best-of-breed">Best of Breed<a href="https://pgmate.github.io/blog/updates-week7#best-of-breed" class="hash-link" aria-label="Direct link to Best of Breed" title="Direct link to Best of Breed">​</a></h2>
+<p>I know, I know; they say: <em>"do one thing, do it right"</em>, but this is still a personal side-project so I feel really free to experiment with features I believe could be beneficial to us Engineers.</p>
+<p>Way too often, we focus on solving the next task on the backlog and neglet our own growth. This is true for both technical and personal growth.</p>
+<p>By embedding <a href="https://github.com/pgmate/contents/tree/main/contents/articles" target="_blank" rel="noopener noreferrer">Community-driven Articles</a> into a development tool (that I hope you use daily) chances are that some articles will catch your attention and you will read through. 🤞</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-journey-ahead">The Journey Ahead<a href="https://pgmate.github.io/blog/updates-week7#the-journey-ahead" class="hash-link" aria-label="Direct link to The Journey Ahead" title="Direct link to The Journey Ahead">​</a></h2>
+<p>My brain is exploding with ideas how to take the educational side of PGMate to the next level:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="bookmarks">Bookmarks<a href="https://pgmate.github.io/blog/updates-week7#bookmarks" class="hash-link" aria-label="Direct link to Bookmarks" title="Direct link to Bookmarks">​</a></h3>
+<p>Same as for the quick-facts, it will be possible to 👍👎 an article, influencing its display status and building a short-list of content that is particularly relevant for you.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="comments">Comments<a href="https://pgmate.github.io/blog/updates-week7#comments" class="hash-link" aria-label="Direct link to Comments" title="Direct link to Comments">​</a></h3>
+<p>PGMate aims to be a social platform focused on databases and Postgres.</p>
+<p>One possibile development is to introduce an account system and link it to your running client (yeah, just another token) and enable classic community features such as comments and similar.</p>
+<p>Another direction would be to enable multi-account within an installation and run this comments feature among the users that can access one PGMate instace. Highly inspired by the concept of a Discord server.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="annotations">Annotations<a href="https://pgmate.github.io/blog/updates-week7#annotations" class="hash-link" aria-label="Direct link to Annotations" title="Direct link to Annotations">​</a></h3>
+<p>I plan to steal this feature from Kindle. I just love to highlight and annotate contents there, and collect my ideas and reflections in an automatic scrapebook.</p>
+<p>Wouldn't it be nice?</p>
+<p>Your local PGMate instance will then become a mix of client, editor, and notebook.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="personal-articles">Personal Articles<a href="https://pgmate.github.io/blog/updates-week7#personal-articles" class="hash-link" aria-label="Direct link to Personal Articles" title="Direct link to Personal Articles">​</a></h3>
+<p>The community articles are basically just a bookmark file on GitHub that is automatically imported when your client boots.</p>
+<p>Well, why not add a "+" icon and let the user add custom bookmarks as well?</p>
+<p>Of course, we would prefer if you decide share your bookmarks with the community and <a href="https://github.com/pgmate/contents" target="_blank" rel="noopener noreferrer">open a new PR towards our Contents Repository</a>.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="community-driven-courses">Community-driven Courses<a href="https://pgmate.github.io/blog/updates-week7#community-driven-courses" class="hash-link" aria-label="Direct link to Community-driven Courses" title="Direct link to Community-driven Courses">​</a></h3>
+<p>The Internet is full of good training material. For free.</p>
+<p>Articles, videos, podcasts. The content is out there but needs research and organization.</p>
+<p>The idea is to build catalogs of structured contents that fulfill a learning purpose.</p>
+<p>This will be similar to how the Articles work, but the <em>"bookmark file"</em> would be organized by goals and milestones.</p>
+<p>Here are some examples of a possible structure:</p>
+<ul>
+<li>Goal: Postgres Intro<!-- -->
+<ul>
+<li>Milestone 1: Run Postgres using Docker</li>
+<li>Milestone 2: Basic CRUD</li>
+<li>...</li>
+</ul>
+</li>
+<li>Goal: Indexing<!-- -->
+<ul>
+<li>Milestone 1: Theory on Indexes</li>
+<li>Milestone 2: Explain / Analyze</li>
+<li>...</li>
+</ul>
+</li>
+</ul>
+<p>Each milestone will be a list of <strong>bookmarks to free online materials</strong> (I guess mostly YouTube videos) that are sorted out from easy to difficult and are meant to be consumed in order.</p>
+<p>Of course, all of this will be JSON files in out <a href="https://github.com/pgmate/contents" target="_blank" rel="noopener noreferrer">Contents Repository</a> that you and everyone else can edit and PR to. The idea is to build this organized content togegher, right?</p>
+<p>PGMate will import the sources into the local state at boot time and provide a nice UI where you can look around the courses catalog, track progress and maybe enjoy the same features that we are imagining for the Articles (bookmarks, annotations, comments)</p>]]></content:encoded>
+            <category>PGMate</category>
+        </item>
         <item>
             <title><![CDATA[Product Updates - Week 5]]></title>
             <link>https://pgmate.github.io/blog/updates-week5</link>
